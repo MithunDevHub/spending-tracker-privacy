@@ -2,132 +2,330 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spending Tracker - Privacy Policy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Spending Tracker — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --navy:       #0F1B2D;
+            --navy-mid:   #1E2E45;
+            --accent:     #2563EB;
+            --accent-lt:  #EFF4FF;
+            --body-bg:    #FFFFFF;
+            --rule:       #E4E9F0;
+            --text-main:  #1A2332;
+            --text-body:  #374151;
+            --text-meta:  #64748B;
+            --max-w:      680px;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 850px;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--body-bg);
+            color: var(--text-body);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            background: var(--navy);
+            padding: 48px 24px 44px;
+        }
+
+        .site-header__inner {
+            max-width: var(--max-w);
             margin: 0 auto;
-            padding: 30px 20px;
-            color: #222;
         }
 
-        h1, h2 {
-            color: #111;
+        .app-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--navy-mid);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 6px;
+            padding: 5px 12px;
+            margin-bottom: 24px;
         }
 
-        h1 {
-            margin-bottom: 5px;
+        .app-badge__dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #4ADE80;
+            flex-shrink: 0;
         }
 
-        .updated {
-            color: #666;
-            margin-bottom: 30px;
+        .app-badge__label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: .03em;
+            color: rgba(255,255,255,.65);
         }
 
-        a {
-            color: #1565c0;
+        .site-header h1 {
+            font-size: clamp(22px, 4vw, 28px);
+            font-weight: 600;
+            color: #FFFFFF;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        .site-header .meta {
+            font-size: 13px;
+            color: rgba(255,255,255,.45);
+        }
+
+        /* ── Main content ── */
+        main {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 56px 24px 80px;
+        }
+
+        .intro {
+            font-size: 15.5px;
+            color: var(--text-body);
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--rule);
+            margin-bottom: 40px;
+        }
+
+        /* ── Sections ── */
+        .policy-section {
+            margin-bottom: 36px;
+        }
+
+        .policy-section + .policy-section {
+            padding-top: 36px;
+            border-top: 1px solid var(--rule);
+        }
+
+        .policy-section h2 {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .section-num {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--accent);
+            background: var(--accent-lt);
+            border-radius: 4px;
+            padding: 2px 7px;
+            flex-shrink: 0;
+            letter-spacing: .03em;
+        }
+
+        .policy-section p {
+            font-size: 14.5px;
+            color: var(--text-body);
+            line-height: 1.8;
+        }
+
+        .policy-section p + p {
+            margin-top: 14px;
+        }
+
+        /* ── Contact block ── */
+        .contact-card {
+            margin-top: 16px;
+            background: #F6F8FB;
+            border: 1px solid var(--rule);
+            border-radius: 8px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .contact-card__icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--accent-lt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-card__icon svg {
+            width: 16px;
+            height: 16px;
+            fill: none;
+            stroke: var(--accent);
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .contact-card__label {
+            font-size: 11.5px;
+            font-weight: 500;
+            color: var(--text-meta);
+            margin-bottom: 2px;
+            letter-spacing: .03em;
+        }
+
+        .contact-card__value a {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-card__value a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--rule);
+            padding: 24px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 12px;
+            color: var(--text-meta);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .site-header { padding: 36px 20px 32px; }
+            main { padding: 40px 20px 64px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
-
 <body>
 
-    <h1>Spending Tracker Privacy Policy</h1>
+    <header class="site-header">
+        <div class="site-header__inner">
+            <div class="app-badge">
+                <span class="app-badge__dot"></span>
+                <span class="app-badge__label">Spending Tracker</span>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="meta">Last updated: September 28, 2026</p>
+        </div>
+    </header>
 
-    <p class="updated">Last updated: September 28, 2026</p>
+    <main>
 
-    <p>
-        Spending Tracker ("the App") is a personal expense tracking application
-        designed to help users record, organize, and review their financial
-        transactions.
-    </p>
+        <p class="intro">
+            Spending Tracker is a personal expense tracking application
+            designed to help users record, organize, and review their financial
+            transactions. This policy explains how the App handles your
+            information.
+        </p>
 
-    <h2>1. Information We Collect</h2>
+        <section class="policy-section">
+            <h2><span class="section-num">01</span> Information We Collect</h2>
+            <p>
+                Spending Tracker does not require users to create an account or provide
+                personal information such as their name, address, or phone number to use
+                the App.
+            </p>
+            <p>
+                Transaction information entered into the App — such as income, expenses,
+                categories, amounts, dates, and related details — is stored locally on
+                your device for the functionality of the App.
+            </p>
+        </section>
 
-    <p>
-        Spending Tracker does not require users to create an account or provide
-        personal information such as their name, address, or phone number to use
-        the App.
-    </p>
+        <section class="policy-section">
+            <h2><span class="section-num">02</span> How Your Information Is Used</h2>
+            <p>
+                Information stored within the App is used to provide features such as
+                transaction tracking, spending summaries, insights, categories,
+                dashboard information, and transaction exports.
+            </p>
+        </section>
 
-    <p>
-        Transaction information entered into the App, such as income, expenses,
-        categories, amounts, dates, and related details, is stored locally on
-        the user's device for the functionality of the App.
-    </p>
+        <section class="policy-section">
+            <h2><span class="section-num">03</span> Data Sharing</h2>
+            <p>
+                Spending Tracker does not sell, rent, or share your transaction
+                information with third parties.
+            </p>
+            <p>
+                The App does not transmit your transaction information to a
+                developer-operated server as part of its normal V1 functionality.
+            </p>
+        </section>
 
-    <h2>2. How Your Information Is Used</h2>
+        <section class="policy-section">
+            <h2><span class="section-num">04</span> Exporting Your Data</h2>
+            <p>
+                The App provides an option to export transaction information. When you
+                choose to export your data, the exported file is handled according to
+                the destination and storage options you select on your device.
+            </p>
+        </section>
 
-    <p>
-        Information stored within the App is used to provide features such as
-        transaction tracking, spending summaries, insights, categories,
-        dashboard information, and transaction exports.
-    </p>
+        <section class="policy-section">
+            <h2><span class="section-num">05</span> Permissions</h2>
+            <p>
+                The App may use device permissions where required by specific
+                functionality. Permissions are requested only when needed by the
+                corresponding feature.
+            </p>
+        </section>
 
-    <h2>3. Data Sharing</h2>
+        <section class="policy-section">
+            <h2><span class="section-num">06</span> Data Security</h2>
+            <p>
+                Since transaction information is stored locally on your device, the
+                security of that information depends on the security of your
+                device, operating system, and device access controls.
+            </p>
+        </section>
 
-    <p>
-        Spending Tracker does not sell, rent, or share your transaction
-        information with third parties.
-    </p>
+        <section class="policy-section">
+            <h2><span class="section-num">07</span> Children's Privacy</h2>
+            <p>
+                Spending Tracker is not specifically directed toward children.
+                We do not knowingly collect personal information from children.
+            </p>
+        </section>
 
-    <p>
-        The App does not transmit your transaction information to a developer
-        operated server as part of its normal V1 functionality.
-    </p>
+        <section class="policy-section">
+            <h2><span class="section-num">08</span> Changes to This Privacy Policy</h2>
+            <p>
+                This Privacy Policy may be updated from time to time to reflect changes
+                to the App or applicable requirements. Any updated version will be
+                published on this page with a revised "Last updated" date.
+            </p>
+        </section>
+    </main>
 
-    <h2>4. Exporting Your Data</h2>
-
-    <p>
-        The App provides an option to export transaction information. When you
-        choose to export your data, the exported file is handled according to
-        the destination and storage options selected by you on your device.
-    </p>
-
-    <h2>5. Permissions</h2>
-
-    <p>
-        The App may use device permissions where required by specific
-        functionality. Permissions are requested only when needed by the
-        corresponding feature.
-    </p>
-
-    <h2>6. Data Security</h2>
-
-    <p>
-        Since transaction information is stored locally on your device, the
-        security of that information also depends on the security of your
-        device, operating system, and device access controls.
-    </p>
-
-    <h2>7. Children's Privacy</h2>
-
-    <p>
-        Spending Tracker is not specifically directed toward children.
-        We do not knowingly collect personal information from children.
-    </p>
-
-    <h2>8. Changes to This Privacy Policy</h2>
-
-    <p>
-        This Privacy Policy may be updated from time to time to reflect changes
-        to the App or applicable requirements. Any updated version will be
-        published on this page with a revised "Last updated" date.
-    </p>
-
-    <h2>9. Contact</h2>
-
-    <p>
-        If you have questions about this Privacy Policy or the privacy practices
-        of Spending Tracker, please contact:
-    </p>
-
-    <p>
-        <strong>Email:</strong> YOUR_DEVELOPER_EMAIL
-    </p>
+    <footer>
+        <p>© 2026 Spending Tracker. All rights reserved.</p>
+    </footer>
 
 </body>
 </html>
